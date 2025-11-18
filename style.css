@@ -15,7 +15,11 @@ body{
     position: relative;
 
 }
+::selection{
+    background-color: #3079d9;
+    color: #fff;
 
+}
 a{
     text-decoration: none;
     color: #000000bb;
@@ -31,7 +35,8 @@ input{
     /* border-left: 10px solid #5e4c1a; */
     background-color: #f4f4f4;
     /* background-color: #ffefc1; */
-    
+    font-size: .95em;
+    /* letter-spacing: .05rem; */
 }
 .inp{
     display: flex;
@@ -59,7 +64,8 @@ input{
 }
 
 .container{
-    padding: 50px;
+    /* padding: 0 7%; */
+    padding: 50px !important;
     height: 400px;
     width: 600px;
     /* background-color: #3079d9; */
@@ -75,8 +81,30 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
-
+.container::after{
+    content: '';
+    display: block;
+    width: 60%;
+    height: 20%;
+    background-color: transparent;
+    position: absolute;
+    top: -25%;
+    /* box-shadow: #3079d924 0px 25px 60px 17px; */
+    border-radius: 50%;
+}
+.container::before{
+    content: '';
+    display: block;
+    width: 70%;
+    height: 1px;
+    background-color: #3079d9;
+    position: absolute;
+    top: 0;
+    /* box-shadow: #3079d942 0px 30px 60px 17px; */
+    /* border-radius: 50%; */
+}
 button{
     margin-top: 30px;
     padding: 10px;
@@ -90,6 +118,10 @@ button{
     border: none;
     height: 45px;
     transition: .3s;
+    position: relative;
+    overflow: hidden;
+    font-size: large;
+    box-shadow: #3079d946 0 25px 50px;
 }
 
 button:hover{
@@ -97,6 +129,25 @@ button:hover{
     transition: .3s;
 
 }
+button:hover::after{
+    background-color: #fff;
+    left: 120%;
+    transition: .1s;
+}
+button::after{
+    content: '';
+    display: block;
+    background-color: #fff;
+    height: 350%;
+    transform: translate(0 , -30%) rotate(30deg);
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: -40%;
+    transition: .2s;
+    /* aspect-ratio: 1; */
+}
+
 
 
 
@@ -141,9 +192,11 @@ button:hover{
     background-color: #f4f4f4;
     transition: .3s;
 }
-
+#eye-icon:hover{
+    background-color: #d7d7d7;
+}
 #eye-icon.Enable{
-    background-color: #2761ac;
+    background-color: #3079d9;
     fill: #fff;
 
     /* outline: 2px solid #2761ac71; */
@@ -176,8 +229,26 @@ button:hover{
 .title-bx p{
     font-size: small;
     opacity: .8;
+    position: relative;
 }
-
+.title-bx p:after{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    bottom: 0;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50% ,0px);
+    width: 0;
+    height: 1px;
+    position: absolute;
+    background-color: #2761ac;
+    transition: .1s;
+}
+.title-bx p:hover:after{
+    width: 100%;
+    transition: .1s;
+}
 
 
 
@@ -213,3 +284,7 @@ button:hover{
 .disable{
     display: none !important;
 }
+
+
+
+
